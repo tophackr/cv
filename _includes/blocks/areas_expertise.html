@@ -1,0 +1,22 @@
+{%- assign array = site.data.areas_expertise -%}
+{%- assign reversed = include.reversed | default: false -%}
+{%- if reversed -%}{%- assign array = array | reverse -%}{%- endif -%}
+{%- capture b_content -%}
+    {%- capture a_content -%}
+        <ul>
+            {%- for item in array -%}
+                {%- assign expertise = item | first -%}
+                <li>
+                    {%- if expertise[1] -%}
+                        <span class="font-bold">{{ expertise[0] }}:</span>
+                        {{ expertise[1] }}
+                    {%- else -%}
+                        {{ expertise[0] }}
+                    {%- endif -%}
+                </li>
+            {%- endfor -%}
+        </ul>
+    {%- endcapture -%}
+    {%- include article.html content=a_content -%}
+{%- endcapture -%}
+{%- include content.html array=array title=include.name content=b_content flex=false -%}

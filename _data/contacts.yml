@@ -1,0 +1,13 @@
+phone: '+15551234567'
+email: alex.johnson@example.com
+location: San Francisco, CA
+socials:
+  - url: https://linkedin.com/in/alexjohnson
+    placeholder: LinkedIn Profile
+  - url: https://github.com/alexjohnson
+    placeholder: GitHub Profile
+    icon: github.svg
+  - url: https://twitter.com/alexjohnson
+    placeholder: Twitter Profile
+  - url: https://www.dribbble.com/alexjohnson
+    placeholder: Dribbble Portfolio

@@ -1,0 +1,11 @@
+{%- assign array = site.additional_experience -%}
+{%- assign reversed = include.reversed | default: true -%}
+{%- if reversed -%}{%- assign array = array | reverse -%}{%- endif -%}
+{%- assign cell = include.cell | default: 'row' -%}
+{%- assign border = include.border | default: true -%}
+{%- capture b_content -%}
+    {%- for item in array -%}
+        {%- include content-item.html title=item.position subtitle=item.company start_date=item.start_date end_date=item.end_date content=item.content cell=cell border=border -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- include content.html array=array title=include.name content=b_content -%}

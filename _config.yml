@@ -1,0 +1,73 @@
+locale: ru
+baseurl: '/cv'
+url: 'https://tophackr.github.io/'
+
+title: Alex Johnson
+position: Senior Frontend Engineer
+description: >
+  Experienced Frontend Developer with a strong background in building scalable and high-performance web applications. Proficient in modern JavaScript frameworks, UI/UX principles, and performance optimization. Passionate about creating intuitive and responsive user interfaces.
+logo: /assets/avatar.png
+
+custom_theme: dracula
+present: Present
+
+blocks:
+  top:
+    summary:
+      name: Summary
+  left:
+    experience:
+      name: Experience
+      reversed: true
+      cell: col
+    additional_experience:
+      name: Additional Experience
+      reversed: true
+      cell: row
+    achievements:
+      name: Achievements
+      border: false
+    education:
+      name: Education
+      reversed: true
+      cell: row
+    certificates:
+      name: Certificates
+    languages:
+      name: Languages
+      cell: row
+  right:
+    projects:
+      name: Projects
+    areas_expertise:
+      name: Areas Expertise
+    skills:
+      name: Skills
+    passions:
+      name: Passions
+      border: false
+
+twitter:
+  card: summary
+
+collections:
+  experience:
+    sort_by: start_date
+  additional_experience:
+    sort_by: start_date
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default
+
+encoding: utf-8
+exclude:
+  - '.gitignore'
+  - '.gitattributes'
+  - README.md
+  - COMMIT_CONVENTION.md
+  - Gemfile
+  - Gemfile.lock
+  - CNAME

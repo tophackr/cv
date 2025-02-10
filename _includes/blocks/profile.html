@@ -1,0 +1,59 @@
+<div class="flex flex-col md:flex-row gap-12">
+    <div class="shrink-0 text-center">
+        <div class="avatar">
+            <div class="ring-primary ring-offset-base-100 w-64 h-64 md:w-48 md:h-48 rounded-full ring ring-offset-4">
+                <img src="{{ site.logo | relative_url }}" alt={{ site.title }}>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile" class="flex-1">
+        <h1 class="text-4xl font-bold">{{ site.title }}</h1>
+        <h2 class="text-3xl text-secondary mb-4">{{ site.position }}</h2>
+
+        {%- capture contacts_block -%}
+            {%- assign contacts = site.data.contacts -%}
+            {%- if contacts.phone -%}
+                <li>
+                    <img src="{%- link assets/phone.svg -%}" alt="{{ contacts.phone }}">
+                    <a class="link-primary" href="tel:{{ contacts.phone }}">{{ contacts.phone }}</a>
+                </li>
+            {%- endif -%}
+
+            {%- if contacts.email -%}
+                <li>
+                    <img src="{%- link assets/email.svg -%}" alt="{{ contacts.email }}">
+                    <a class="link-primary" href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
+                </li>
+            {%- endif -%}
+
+            {%- if contacts.location -%}
+                <li>
+                    <img src="{%- link assets/location.svg -%}" alt="{{ contacts.location }}">
+                    {{ contacts.location }}
+                </li>
+            {%- endif -%}
+        {%- endcapture -%}
+        {%- include breadcrumbs.html content=contacts_block -%}
+
+        {%- capture link_block -%}
+            {%- if contacts.socials -%}
+                {%- for link in contacts.socials -%}
+                    <li>
+                        {%- capture url -%}{%- link assets/website.svg -%}{%- endcapture -%}
+                        {%- if link.icon -%}
+                            {%- assign url = link.icon | prepend: 'assets/socials/' | relative_url -%}
+                        {%- endif -%}
+                        <img src="{{ url }}" alt="{{ contacts.url }}">
+                        <a class="link-primary" href="{{ link.url }}">
+                            {%- if link.placeholder -%}{{ link.placeholder }}{%- else -%}{{ link.url | replace: 'https://', '' | replace: 'http://', '' }}{%- endif -%}
+                        </a>
+                    </li>
+                {%- endfor -%}
+            {%- endif -%}
+        {%- endcapture -%}
+        {%- include breadcrumbs.html content=link_block -%}
+
+        {%- include include-block.html array=site.blocks.top -%}
+    </div>
+</div>

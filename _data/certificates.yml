@@ -1,0 +1,9 @@
+- name: Advanced React Development
+  url: https://example.com
+  description: Advanced course on React, focusing on performance optimization, server-side rendering, and implementing custom hooks for scalable applications.
+- name: CSS for Responsive Design
+  location: London, UK
+  year: 2023
+  description: Explored advanced CSS techniques, including Flexbox, Grid, and responsive media queries to create mobile-first and adaptable layouts.
+- name: Web Performance Optimization Specialist
+  year: 2022

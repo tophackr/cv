@@ -1,0 +1,6 @@
+{%- if include.array.size > 0 -%}
+    {%- include h3.html content=include.title -%}
+    {%- if include.flex != false -%}<div class="flex flex-col gap-y-4">{%- endif -%}
+        {{ include.content }}
+    {%- if include.flex != false -%}</div>{%- endif -%}
+{%- endif -%}

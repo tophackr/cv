@@ -1,0 +1,27 @@
+{%- assign array = site.data.languages -%}
+{%- assign reversed = include.reversed | default: false -%}
+{%- if reversed -%}
+  {%- assign array = array | reverse -%}{%- endif -%}
+{%- assign cell = include.cell | default: 'row' -%}
+{%- capture b_content -%}
+    <div class="{%- if cell == 'col' -%}flex flex-col{%- else -%}grid grid-cols-2 gap-x-6{%- endif-%}">
+        {%- for item in array -%}
+            <div class="flex flex-row flex-wrap items-center gap-x-2">
+                <p class="flex-1 font-bold">{{ item.language }}</p>
+                {%- capture content -%}
+                    <li class="italic">{{ item.level }}</li>
+                    <li>
+                        <div class="rating rating-xs gap-1">
+                            {%- assign lang_index = forloop.index | append: 'lang-' -%}
+                            {%- for i in (1..5) -%}
+                                <input type="radio" name="{{ lang_index }}" class="mask mask-circle{% if i <= item.points %} bg-secondary{% endif %}"{% if i == item.points %} checked="checked"{% endif %} disabled />
+                            {%- endfor -%}
+                        </div>
+                    </li>
+                {%- endcapture -%}
+                {%- include breadcrumbs.html content=content -%}
+            </div>
+        {%- endfor -%}
+    </div>
+{%- endcapture -%}
+{%- include content.html array=array title=include.name content=b_content flex=false -%}

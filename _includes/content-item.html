@@ -1,0 +1,67 @@
+{%- assign div_class = '' -%}
+{%- if include.icon -%}
+    {%- assign div_class = div_class | append: 'flex flex-row items-start gap-x-4' -%}
+{%- endif -%}
+{%- if forloop.index != forloop.length and include.border != false -%}
+    {%- assign div_class = div_class | append: ' border-b border-base-content/50' -%}
+{%- endif -%}
+{%- if forloop.last == false and include.content == nil -%}
+    {%- assign div_class = div_class | append: ' pb-4' -%}
+{%- endif -%}
+
+<div{% if div_class != '' %} class="{{ div_class | strip }}"{% endif %}>
+    {%- if include.icon -%}
+        {%- include circle-icon.html icon=include.icon -%}
+        <div class="flex-1">
+    {%- endif -%}
+
+    <h4 class="text-xl font-bold">
+        {%- if include.url -%}
+            <a class="link-primary" href="{{ include.url }}">{{ include.title }}</a>
+        {%- else -%}
+            {{ include.title }}
+        {%- endif -%}
+    </h4>
+
+    {%- if include.cell == 'row' -%}<div class="flex flex-row flex-wrap items-start pb-2">{%- endif-%}
+
+    {%- if include.subtitle -%}
+        <p class="text-secondary{% if include.cell == 'row' %} flex-1{% endif %}">{{ include.subtitle }}</p>
+    {%- endif -%}
+
+    {%- if include.start_date or include.date or include.location -%}
+        {%- capture content-%}
+            {%- if include.start_date or include.date -%}
+                <li>
+                    <img src="{%- link assets/calendar.svg -%}">
+                    {%- if include.date -%}
+                        {{ include.date }}
+                    {%- else -%}
+                        {{ include.start_date | date: '%m/%Y' }} - {% if include.end_date %}{{ include.end_date | date: '%m/%Y' }}{% else %}{{ site.present | default: 'Present' }}{% endif %}
+                    {%- endif -%}
+                </li>
+            {%- endif -%}
+            {%- if include.location -%}
+                <li>
+                    <img src="{%- link assets/location.svg -%}">
+                    {{ include.location }}
+                </li>
+            {%- endif -%}
+        {%- endcapture -%}
+        {%- assign clsx = '' -%}
+        {%- if include.cell == 'row' -%}
+            {%- assign clsx = 'py-0' -%}
+        {%- elsif include.content == nil -%}
+            {%- assign clsx = 'pb-0' -%}
+        {%- endif -%}
+        {%- include breadcrumbs.html content=content class=clsx -%}
+    {%- endif -%}
+
+    {%- if include.cell == 'row' -%}</div>{%- endif-%}
+
+    {%- if include.content -%}
+        {%- include article.html content=include.content -%}
+    {%- endif -%}
+
+    {%- if include.icon -%}</div>{%- endif -%}
+</div>

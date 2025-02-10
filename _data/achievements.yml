@@ -1,0 +1,12 @@
+- title: Optimized Web Performance
+  description: Reduced page load time by 40% by implementing lazy loading, code splitting, and image optimization, significantly enhancing user experience.
+  icon: bolt.svg
+- title: Led Frontend Migration to Next.js
+  description: Successfully migrated a legacy React project to Next.js, improving SEO, performance, and server-side rendering capabilities.
+  icon: arrow-path.svg
+- title: Developed a Design System
+  description: Created a scalable and reusable design system, reducing UI inconsistencies and improving development speed by 50%.
+  icon: swatch.svg
+- title: Increased Accessibility Compliance
+  description: Enhanced website accessibility to meet WCAG 2.1 standards, ensuring an inclusive experience for all users.
+  icon: check.svg

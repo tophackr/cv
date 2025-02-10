@@ -1,0 +1,12 @@
+{%- assign array = site.data.skills -%}
+{%- assign reversed = include.reversed | default: false -%}
+{%- if reversed -%}{%- assign array = array | reverse -%}{%- endif -%}
+{%- capture b_content -%}
+    {%- capture br_content -%}
+        {%- for item in array -%}
+            <div class="badge badge-outline">{{ item }}</div>
+        {%- endfor -%}
+    {% endcapture %}
+    {%- include breadcrumbs.html content=br_content gap=2 -%}
+{%- endcapture -%}
+{%- include content.html array=array title=include.name content=b_content flex=false -%}

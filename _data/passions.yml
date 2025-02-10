@@ -1,0 +1,9 @@
+- name: Web Development
+  description: Passionate about building modern, scalable, and interactive web applications. Constantly exploring new technologies to create user-friendly and efficient web experiences.
+  icon: computer.svg
+- name: UX/UI Design
+  description: Enjoy crafting visually appealing and intuitive interfaces that provide users with seamless experiences. Focus on accessibility and user-centered design principles.
+  icon: swatch.svg
+- name: Open Source Contributions
+  description: Dedicated to contributing to open-source projects, collaborating with global communities, and improving software development for everyone.
+  icon: globe.svg

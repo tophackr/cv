@@ -1,0 +1,17 @@
+{%- for item in include.array -%}
+    {%- assign block = item[0] -%}
+    {%- assign args = item[1] -%}
+
+    {%- assign name = args.name -%}
+    {%- unless name -%}
+        {%- assign words = block | split: '_' -%}
+        {%- assign title_case = '' -%}
+        {%- for word in words -%}
+            {%- assign capitalized_word = word | capitalize -%}
+            {%- assign title_case = title_case | append: capitalized_word | append: ' ' -%}
+        {%- endfor -%}
+        {%- assign name = title_case | strip -%}
+    {%- endunless -%}
+
+    {% include blocks/{{ block }}.html name=name reversed=args.reversed cell=args.cell border=args.border %}
+{%- endfor -%}

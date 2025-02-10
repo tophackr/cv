@@ -1,0 +1,20 @@
+.breadcrumbs > ul > li::before {
+    content: none !important;
+}
+
+.breadcrumbs > ul > li > svg {
+    width: 1.5rem;
+    margin-right: 0.25rem;
+}
+
+#profile img {
+    display: none;
+}
+
+#inline-icons img {
+    display: none;
+}
+
+#circle-icon img {
+    display: none;
+}

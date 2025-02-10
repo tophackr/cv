@@ -1,0 +1,10 @@
+{%- assign array = site.data.achievements -%}
+{%- assign reversed = include.reversed | default: false -%}
+{%- if reversed -%}{%- assign array = array | reverse -%}{%- endif -%}
+{%- assign border = include.border | default: false -%}
+{%- capture b_content -%}
+    {%- for item in array -%}
+        {%- include content-item.html icon=item.icon title=item.title content=item.description border=border -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- include content.html array=array title=include.name content=b_content -%}

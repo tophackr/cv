@@ -1,0 +1,5 @@
+- name: Portfolio Website
+  description: Built a personal portfolio to showcase projects, skills, and achievements. The site is fully responsive and features a dynamic blog section.
+  url: https://example.com
+- name: E-commerce Platform
+  description: Developed a full-stack e-commerce platform with features like product listings, shopping carts, and secure checkout. Integrated Stripe for payments and optimized performance for a seamless user experience.

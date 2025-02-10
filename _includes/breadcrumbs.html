@@ -1,0 +1,6 @@
+{%- assign gap = include.gap | default: 4 -%}
+<div class="breadcrumbs{% if include.class %} {{ include.class }}{% endif %}">
+    <ul id="inline-icons" class="flex flex-row flex-wrap gap-{{ gap }}">
+        {{ include.content }}
+    </ul>
+</div>

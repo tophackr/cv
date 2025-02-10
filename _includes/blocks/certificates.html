@@ -1,0 +1,10 @@
+{%- assign array = site.data.certificates -%}
+{%- assign reversed = include.reversed | default: false -%}
+{%- if reversed -%}{%- assign array = array | reverse -%}{%- endif -%}
+{%- assign border = include.border | default: true -%}
+{%- capture b_content -%}
+    {%- for item in array -%}
+        {%- include content-item.html title=item.name url=item.url date=item.year location=item.location content=item.description border=border -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- include content.html array=array title=include.name content=b_content -%}

@@ -1,0 +1,31 @@
+---
+common-ext-css:
+  - "https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+common-css:
+  - /assets/main.css
+common-ext-js:
+  - "https://cdn.tailwindcss.com"
+  - "https://cdn.tailwindcss.com/?plugins=typography@0.5.15"
+  - "https://kit.fontawesome.com/7c8eec21b2.js"
+common-js:
+  - /assets/main.js
+---
+
+{%- assign unique_string = page.title | append: page.url | append: page.date | append: site.time -%}
+{%- assign unique_hash = unique_string | md5 -%}
+
+{%- assign theme = '' -%}
+{%- if site.custom_theme.size > 2 -%}
+  {%- assign theme = site.custom_theme -%}
+{%- endif -%}
+
+<!DOCTYPE html>
+<html lang="{{ site.locale | default: 'en' }}"{% if theme %} data-theme="{{ theme }}"{% endif %}>
+    {%- include head.html -%}
+
+    <body>
+        <div class="container mx-auto mt-6 p-4">
+            {{ content }}
+        </div>
+    </body>
+</html>
