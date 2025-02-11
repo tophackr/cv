@@ -1,7 +1,6 @@
 {%- assign array = site.data.languages -%}
 {%- assign reversed = include.reversed | default: false -%}
-{%- if reversed -%}
-  {%- assign array = array | reverse -%}{%- endif -%}
+{%- if reversed -%}{%- assign array = array | reverse -%}{%- endif -%}
 {%- assign cell = include.cell | default: 'row' -%}
 {%- capture b_content -%}
     <div class="{%- if cell == 'col' -%}flex flex-col{%- else -%}grid grid-cols-2 gap-x-6{%- endif-%}">
