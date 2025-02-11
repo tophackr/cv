@@ -1,5 +1,5 @@
 locale: ru
-baseurl: '/cv'
+baseurl: /cv
 url: 'https://tophackr.com/'
 
 title: Alex Johnson
