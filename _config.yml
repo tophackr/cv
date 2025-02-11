@@ -1,6 +1,6 @@
 locale: ru
-baseurl: ''
-url: 'https://dev-cv.tophackr.com/'
+baseurl: '/cv'
+url: 'https://tophackr.com/'
 
 title: Alex Johnson
 position: Senior Frontend Engineer
