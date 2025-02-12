@@ -2,36 +2,30 @@
 
 Achievements are configured in the `achievements.yml` file located in the `_data` folder. This file is an array of data containing information about achievements.
 
-#### Attributes
+### Attributes
 
-`title`: [string](https://shopify.github.io/liquid/basics/types/#string)
+`title`: [string]
+- The title of the achievement.
 
-* The title of the achievement.
+`description`: [string]
+- The description of the achievement.
 
-`description`: [string](https://shopify.github.io/liquid/basics/types/#string)
+`icon`: [string]
+- The name of the icon with the file extension.  
+<small>* Icons should be placed in the `assets/blocks` folder.</small>
 
-* The description of the achievement.
+### Configuration
 
-`icon`: [string](https://shopify.github.io/liquid/basics/types/#string)
+`name`? [string]
+- The name of the displayed block.
 
-* The name of the icon with the file extension.\
-  \* Icons should be placed in the `assets/blocks` folder.
+`reversed`? [boolean]
+- Whether the list will be reversed. [More details][reversed-more]
 
-#### Configuration
+`border`? [boolean]
+- Whether the block will have a border.
 
-`name`? [string](https://shopify.github.io/liquid/basics/types/#string)
-
-* The name of the displayed block.
-
-`reversed`? [boolean](https://shopify.github.io/liquid/basics/types/#boolean)
-
-* Determines whether the list will be reversed. [More detailed](introducation.md#reverse-list).
-
-`border`? [boolean](https://shopify.github.io/liquid/basics/types/#boolean)
-
-* Determines whether the blocks will have a border.
-
-**Default Configuration**
+#### Default Configuration
 
 ```yml
 blocks:
@@ -41,3 +35,7 @@ blocks:
       reversed: false
       border: false
 ```
+
+[string]: https://shopify.github.io/liquid/basics/types/#string
+[boolean]: https://shopify.github.io/liquid/basics/types/#boolean
+[reversed-more]: introducation.md#reverse-list
