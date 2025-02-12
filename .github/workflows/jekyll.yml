@@ -4,8 +4,12 @@ run-name: Deploy by @${{ github.actor }}
 on:
   push:
     branches: ['main']
+    paths-ignore:
+      - 'docs/**'
   pull_request:
     branches: ['main']
+    paths-ignore:
+      - 'docs/**'
   workflow_dispatch:
 
 permissions:
