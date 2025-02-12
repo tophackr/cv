@@ -40,7 +40,7 @@ blocks:
     projects:
       name: Projects
     areas_expertise:
-      name: Areas Expertise
+      name: Areas of Expertise
     skills:
       name: Skills
     passions:
