@@ -34,8 +34,8 @@ layout:
 
 ### Default Configuration / Blocks
 
-The default configuration can be found here.\
-The block configuration can be found here.
+The default configuration can be found [here](default-configuration.md).\
+The block configuration can be found [here](<README (1).md>).
 
 ***
 
