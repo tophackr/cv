@@ -1,21 +1,54 @@
-# Introduction
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
 
-**Block names**
+# Configuration
 
-You have the option to eliminate the `name` property from each block. Even without explicitly specifying the property, the corresponding name will be automatically assigned based on the block's identifier. This feature ensures consistency and reduces redundancy by allowing the system to smartly substitute the appropriate name
+### Profile
 
-**Reverse list**
+`title`: [string](https://shopify.github.io/liquid/basics/types/#string)
 
-If the reverse list is enabled, the items will be displayed from the end to the beginning and vice versa if disabled. In the `experience` and `additional_experience` blocks, sort by date, and reverse will display them from the oldest date.
+* Author's name. Provide the full name of the author to be displayed in the profile.
 
-**Cell**
+`position`: [string](https://shopify.github.io/liquid/basics/types/#string)
 
-Depending on the passed cell, the content of the date and subtitle will be displayed differently.\
-`row` - The subtitle and date, location will be in the same row.\
-`col` - The subtitle and date, location will be in different rows below each other.
+* Position or specialty (e.g., Frontend Developer). This will help define the author's professional role.
 
-#### cell
+`description`: [string](https://shopify.github.io/liquid/basics/types/#string)
 
-```yaml
-cell: 'row' | 'col'
+* A detailed description to be displayed in the `summary` block. Describe the author's main achievements, skills, and experience.
+
+`logo`: [string](https://shopify.github.io/liquid/basics/types/#string)
+
+* By default, the avatar located in the `assets` folder named `avatar.png` is used. You can replace it with your own avatar or change its location by specifying a new link in this value.
+
+### Default Configuration / Blocks
+
+The default configuration can be found here.\
+The block configuration can be found here.
+
+***
+
+#### **SEO**
+
+```yml
+locale: en
+twitter:
+  card: summary
 ```
+
+It is recommended not to change these settings (except for `locale`). If you are familiar with SEO, you can configure them at your discretion by following the [configuration](https://github.com/jekyll/jekyll-seo-tag).
+
+#### **Other Settings**
+
+All other configuration settings can be found on the [Jekyll](https://jekyllrb.com/docs/configuration/) website.

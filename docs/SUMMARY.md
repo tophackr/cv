@@ -1,5 +1,8 @@
 # Table of contents
 
+* [Configuration](README.md)
+* [Default Configuration](default-configuration.md)
+
 ## Blocks
 
-* [Introduction](README.md)
+* [Introduction](<README (1).md>)
