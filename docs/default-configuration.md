@@ -1,6 +1,6 @@
 # Default Configuration
 
-### Theme
+### [Theme][theme]
 
 ```yml
 custom_theme:
@@ -8,9 +8,9 @@ custom_theme:
   dark: dark
 ```
 
-### Blocks
+### [Blocks][blocks]
 
-Blocks represent different sections of your website that can be placed in various parts of the page. By default, blocks are listed in random order, but you can change their arrangement as you see fit. For more information, see Blocks.
+Blocks represent different sections of your website that can be placed in various parts of the page. By default, blocks are listed in random order, but you can change their arrangement as you see fit. For more information, see [Blocks][blocks].
 
 Default values will only work if the blocks are included in the `top`, `left`, `right` list.
 
@@ -65,3 +65,6 @@ blocks:
 ```
 
 You can remove any block from the configuration, and it will not be displayed on the website. This allows you to flexibly customize the appearance and content of your website according to your needs.
+
+[theme]: theme.md
+[blocks]: blocks/introducation.md
